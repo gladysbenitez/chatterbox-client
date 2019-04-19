@@ -8,7 +8,9 @@ var FormView = {
 
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
-    event.preventDefault();
+    event.preventDefault();// prevents the browser from re freshing
+    //post to server our message in our room
+    //server should return it- update our feed
     
     console.log('click!');
   },
