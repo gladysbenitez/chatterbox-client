@@ -10,10 +10,10 @@ var RoomsView = {
     //hook up button with click listener
     //display the room names from the data which we GET
   },
-  handleClick: function(event){
+  // handleClick: function(event){
    
-  console.log('we added the room')
-  },
+  // console.log('we added the room')
+  // },
 
   renderRoom: function(room) {
     const html = RoomsView.renderTemplate({'room':room});

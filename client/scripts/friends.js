@@ -1,12 +1,11 @@
 var Friends = {
   isFriend: false,
+  ourFriends: [], 
+
     toggleStatus: function(event){
-        console.log($(event.target).text())
-        // var message = {
-        //    username: App.username,// our name
-        //    friendName: $('.username').val(), //our friends name
-        //  };
-        //  Parse.create(message);
+        let clickedFriend = $(event.target).text();
+        Friends.ourFriends.push(clickedFriend);
+        console.log(this);
     }
 
 };
