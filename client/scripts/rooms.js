@@ -6,7 +6,6 @@ var Rooms = {
             roomname: $('#message').val(),
           };
           Parse.create(message);
-          
      }
 
 };
