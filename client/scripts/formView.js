@@ -9,9 +9,15 @@ var FormView = {
   handleSubmit: function(event) {
     // Stop the browser from submitting the form
     event.preventDefault();// prevents the browser from re freshing
+    var message = {
+      username: App.username,
+      text: $('#message').val(),
+      roomname: '4chan'
+    };
+    Parse.create(message);
+    
     //post to server our message in our room
     //server should return it- update our feed
-    
     console.log('click!');
   },
 
