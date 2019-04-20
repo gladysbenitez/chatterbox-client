@@ -13,35 +13,28 @@ var RoomsView = {
   handleClick: function(event){
   console.log('we added the room')
   },
-  renderRoom: function(room) {
 
+  renderRoom: function(room) {
+    const html = RoomsView.renderTemplate(room);
+    console.log(html, 'this is the html')
+    RoomsView.$select.append(html);
   },
 
   render: function(data) {
     var i, html= '';
-//it erate through data.results which is an array.. each element of this array is an object 
-//each object has a key 'roomname'
     const uniqueRooms = {};
-    const messages = data.results;
-    for(var i = 0; i < messages; i++){
+    let messages = data.results;// the array of objects
+    for(var i = 0; i < messages.length; i++){
       if (messages[i].roomname) {
         uniqueRooms[messages[i].roomname] = messages[i].roomname;
       }
     }
-    const roomObj = [];
-    for (let room in uniqueRooms) {
-      roomObj.push({room: uniqueRoom[room]})
+    for (let key in uniqueRooms) {
+      RoomsView.renderRoom({room: uniqueRooms[key]});
     }
+  },
 
-    },
     renderTemplate: _.template(`
-      
-    <option value="volvo">Volvo</option>
-
+    <option value="room"><%- room %></option>
   `)
-    //when you add a room name to the form and click the add room button 
-    //add the roomname to the room select list 
-
-  
-
 };
