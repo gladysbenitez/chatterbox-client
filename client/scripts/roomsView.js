@@ -5,18 +5,19 @@ var RoomsView = {
 
   initialize: function() {
     console.log()
-    RoomsView.$button.on('click', RoomsView.handleClick());
+    RoomsView.$button.on('click', Rooms.add);
 
     //hook up button with click listener
     //display the room names from the data which we GET
   },
   handleClick: function(event){
+   
   console.log('we added the room')
   },
 
   renderRoom: function(room) {
     const html = RoomsView.renderTemplate({'room':room});
-    console.log(html, 'this is the html')
+    // console.log(html, 'this is the html')
     RoomsView.$select.append(html);
   },
 
