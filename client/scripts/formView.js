@@ -18,7 +18,7 @@ var FormView = {
     
     //post to server our message in our room
     //server should return it- update our feed
-    console.log('click!');
+    // console.log('click!');
   },
 
   setStatus: function(active) {

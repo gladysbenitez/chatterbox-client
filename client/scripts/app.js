@@ -23,7 +23,7 @@ var App = {
       // console.log('THIS IS THE DATA', data);
       MessagesView.render(data);
       RoomsView.render(data);
-      console.log('THIS IS THE DATA', data);
+      // console.log('THIS IS THE DATA', data);
 
       callback();
     });

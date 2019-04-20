@@ -7,7 +7,7 @@ var MessagesView = {
   },
   renderMessage: function(message){
   
-    if(message === undefined){
+    if(message.username === undefined){
       message.username = 'anonymous';
     }
     if(message.text === undefined){
