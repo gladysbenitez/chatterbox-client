@@ -15,7 +15,7 @@ var RoomsView = {
   },
 
   renderRoom: function(room) {
-    const html = RoomsView.renderTemplate(room);
+    const html = RoomsView.renderTemplate({'room':room});
     console.log(html, 'this is the html')
     RoomsView.$select.append(html);
   },
@@ -30,7 +30,7 @@ var RoomsView = {
       }
     }
     for (let key in uniqueRooms) {
-      RoomsView.renderRoom({room: uniqueRooms[key]});
+      RoomsView.renderRoom(uniqueRooms[key]);
     }
   },
 
