@@ -5,29 +5,28 @@ var MessagesView = {
   initialize: function() {
     //
   },
-  renderMessage: function(input){
-    
-
+  renderMessage: function(message){
+  
+    if(message === undefined){
+      message.username = 'anonymous';
+    }
+    if(message.text === undefined){
+      message.text = 'whooooohoooo';
+    }
+    if(message.text.includes('<')){
+      message.text = 'hiiiii';
+    }
+    const html = MessageView.render(message);
+    MessagesView.$chats.append(html);
   },
 
   render: function(data) {
     //after input to form 
     //re render messages list
-    var i, html = "";
-    for (i = 0; i < data.results.length; i++) {
-      if(data.results[i].username === undefined){
-        data.results[i].username = 'anonymous';
-      }
-      if(data.results[i].text === undefined){
-        data.results[i].text = 'whooooohoooo';
-      }
-      if(data.results[i].text.includes('<')){
-        data.results[i].text = 'hiiiii';
-      }
-    html += MessageView.render(data.results[i]);
+    const messages = data.results;
+    for (let i = 0; i < messages.length; i++) {
+      MessagesView.renderMessage(messages[i]);
     }  
-    MessagesView.$chats.append(html);
-
   }
 
 };
