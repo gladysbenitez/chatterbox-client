@@ -12,7 +12,7 @@ var FormView = {
     var message = {
       username: App.username,
       text: $('#message').val(),
-      roomname: '4chan'
+      roomname:  $('#rooms select option:selected').text()
     };
     Parse.create(message);
     
